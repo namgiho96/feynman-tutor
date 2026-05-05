@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "task": "Feynman Tutor Agent - LangGraph Jupyter Notebook",
+  "stories": [
+    {
+      "id": "US-001",
+      "title": "프로젝트 셋업 & State 정의",
+      "passes": true,
+      "evidence": "TutorState TypedDict 11개 필드 정의 완료, requirements.txt 생성, OPENAI_API_KEY 환경변수 확인 셀 포함"
+    },
+    {
+      "id": "US-002",
+      "title": "explain_node 구현",
+      "passes": true,
+      "evidence": "파인만 기법 system_prompt (비유 2개 이상, 5살 언어, 한 문장 요약) 포함. state['explanation'] 반환 및 콘솔 출력"
+    },
+    {
+      "id": "US-003",
+      "title": "quiz_node 구현",
+      "passes": true,
+      "evidence": "JSON 4지선다 퀴즈 생성, input() 사용자 답변, is_correct 판별 및 피드백 출력"
+    },
+    {
+      "id": "US-004",
+      "title": "re_explain_node 구현",
+      "passes": true,
+      "evidence": "다른 비유 system_prompt, attempts += 1, 재시도 n/max_retry 출력"
+    },
+    {
+      "id": "US-005",
+      "title": "조건부 엣지 & 그래프 조립",
+      "passes": true,
+      "evidence": "route_after_quiz 3가지 분기(END/END/re_explain), add_node 3개, add_conditional_edges, add_edge(re_explain→quiz), graph.compile() 문법 검사 통과"
+    },
+    {
+      "id": "US-006",
+      "title": "설계 문서 & 데모 셀",
+      "passes": true,
+      "evidence": "Step1 마크다운(이름/목적/핵심기능3가지/그래프다이어그램), run_feynman_tutor() 함수, 데모 실행 셀. 26/26 자동 검증 통과"
+    }
+  ]
+}
