@@ -12,3 +12,4 @@ wheels/
 # OMC internal state
 .omc/state/
 progress.txt
+.env
