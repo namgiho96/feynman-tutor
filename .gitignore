@@ -11,5 +11,10 @@ wheels/
 
 # OMC internal state
 .omc/state/
+.omc/sessions/
+.omc/logs/
 progress.txt
 .env
+
+# Jupyter
+.ipynb_checkpoints/
